@@ -80,10 +80,6 @@ Quer ajudar a melhorar o repositório? Aqui está como:
 
 5. **Abra um pull request.**
 
-## 📜 Licença
-
-Este repositório está licenciado sob a [Licença MIT](LICENSE).
-
 ---
 
 Para qualquer dúvida ou suporte, entre em contato . Vamos arrasar juntos! 🚀🤘
