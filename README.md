@@ -41,19 +41,87 @@ Para preparar seu ambiente, siga estes passos:
 
 2. **Instale as dependências:**
 
-    - **JavaScript e TypeScript:**
+    - **Node.js e npm (Node Package Manager):**
+
+        Siga as instruções na [documentação do Node.js](https://nodejs.org/).
+
+        **Exemplo de instalação no Ubuntu:**
 
         ```bash
-        npm install
+        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        ```
+
+    - **TypeScript:**
+
+        Instale globalmente via npm:
+
+        ```bash
+        npm install -g typescript
         ```
 
     - **Docker:**
 
         Confira a [documentação do Docker](https://docs.docker.com/get-docker/) para instalação.
 
+    - **Java:**
+
+        Siga as instruções na [documentação do OpenJDK](https://openjdk.java.net/install/).
+
+        **Exemplo de instalação no Ubuntu:**
+
+        ```bash
+        sudo apt update
+        sudo apt install openjdk-11-jdk
+        ```
+
+    - **Spring Framework:**
+
+        O Spring Framework é usado como uma dependência no seu projeto Java. Siga as instruções no [site do Spring](https://spring.io/projects/spring-framework) para configurar.
+
+    - **Angular:**
+
+        Instale o Angular CLI globalmente via npm:
+
+        ```bash
+        npm install -g @angular/cli
+        ```
+
+    - **Banco de Dados:**
+
+        Dependendo do banco de dados que você está usando (MySQL, PostgreSQL, MongoDB, etc.), siga a [documentação correspondente](https://dev.mysql.com/downloads/), [PostgreSQL](https://www.postgresql.org/download/), ou [MongoDB](https://www.mongodb.com/try/download/community) para instalação e configuração.
+
 3. **Configure seu ambiente:**
 
     Siga as instruções nos arquivos `README.md` nas pastas correspondentes.
+
+## 🧩 Uso do Git
+
+Aqui estão alguns comandos básicos para gerenciar seu repositório:
+
+- **Verificar o status dos arquivos:**
+
+    ```bash
+    git status
+    ```
+
+- **Adicionar arquivos ao commit:**
+
+    ```bash
+    git add .
+    ```
+
+- **Fazer commit das mudanças:**
+
+    ```bash
+    git commit -m "descreva o commit"
+    ```
+
+- **Enviar as mudanças para o repositório remoto:**
+
+    ```bash
+    git push origin main
+    ```
 
 ## 🤝 Contribuições
 
@@ -82,5 +150,4 @@ Quer ajudar a melhorar o repositório? Aqui está como:
 
 ---
 
-Para qualquer dúvida ou suporte, entre em contato . Vamos arrasar juntos! 🚀🤘
-
+Para qualquer dúvida ou suporte, entre em contato. Vamos arrasar juntos! 🚀🤘
