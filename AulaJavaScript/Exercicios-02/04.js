@@ -1,8 +1,10 @@
-function mostrarAntecessor(valor) {
-    const antecessor = valor - 1;
-    console.log(`O antecessor de ${valor} é ${antecessor}`);
-}
+/*
+Exercício 04 - Antecessor
 
-// Exemplo de uso
-const valor = 10; // Você pode alterar este valor conforme necessário
-mostrarAntecessor(valor);
+Escreva um algoritmo para ler um valor (de uma variável) 
+e escrever (na tela) o seu antecessor.
+*/
+const numero = 10;
+var antecesor = numero - 1;
+
+console.log("o numero é", numero, "e seu antecesor é", antecesor);

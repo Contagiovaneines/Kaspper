@@ -1,17 +1,27 @@
-function calcularPercentuais(totalEleitores, votosBrancos, votosNulos, votosValidos) {
-    const percentualBrancos = (votosBrancos / totalEleitores) * 100;
-    const percentualNulos = (votosNulos / totalEleitores) * 100;
-    const percentualValidos = (votosValidos / totalEleitores) * 100;
+/*
+Exercício 07 - Porcentagem de votos
 
-    console.log(`Percentual de votos brancos: ${percentualBrancos.toFixed(2)}%`);
-    console.log(`Percentual de votos nulos: ${percentualNulos.toFixed(2)}%`);
-    console.log(`Percentual de votos válidos: ${percentualValidos.toFixed(2)}%`);
-}
+Escreva um algoritmo para ler o número total de eleitores de um município, 
+o número de votos brancos, nulos e válidos. Calcular e escrever o percentual 
+que cada um representa em relação ao total de eleitores. 
+*/
 
-// Exemplo de uso
-const totalEleitores = 1000; // Substitua pelo número total de eleitores
-const votosBrancos = 150; // Substitua pelo número de votos brancos
-const votosNulos = 50; // Substitua pelo número de votos nulos
-const votosValidos = 800; // Substitua pelo número de votos válidos
+// Definindo as variáveis com os valores fornecidos
+var eleitores = 95018;         // Número total de eleitores
+var votos_brancos = 4750.9;    // Número de votos brancos
+var votos_nulos = 4750.9;      // Número de votos nulos
+var votos_validos = 85516.2;   // Número de votos válidos
 
-calcularPercentuais(totalEleitores, votosBrancos, votosNulos, votosValidos);
+// Calculando os percentuais
+var percentual_brancos = (votos_brancos / eleitores) * 100; // Percentual de votos brancos
+var percentual_nulos = (votos_nulos / eleitores) * 100;     // Percentual de votos nulos
+var percentual_validos = (votos_validos / eleitores) * 100; // Percentual de votos válidos
+
+// Escrevendo os resultados no console
+console.log("Total de eleitores: " + eleitores);            // Exibe o total de eleitores
+console.log("Percentual de votos brancos: " + percentual_brancos.toFixed(2) + "%"); // Exibe o percentual de votos brancos
+console.log("Percentual de votos nulos: " + percentual_nulos.toFixed(2) + "%");     // Exibe o percentual de votos nulos
+console.log("Percentual de votos válidos: " + percentual_validos.toFixed(2) + "%"); // Exibe o percentual de votos válidos
+
+
+// Exibe o percentual de votos brancos, nulos e válidos, formatando os resultados para duas casas decimais com toFixed(2).

@@ -1,9 +1,13 @@
-function calcularAreaRetangulo(base, altura) {
-    const area = base * altura;
-    console.log(`A área do retângulo com base ${base} e altura ${altura} é ${area}`);
-}
+/*
+Exercício 05 - Área do retângulo
 
-// Exemplo de uso
-const base = 5; // Substitua pelo valor desejado para a base
-const altura = 10; // Substitua pelo valor desejado para a altura
-calcularAreaRetangulo(base, altura);
+Escreva um algoritmo para ler as dimensões de um retângulo (base e altura),
+calcular e escrever a área do retângulo. 
+*/
+
+let base = 5; // Substitua pelo valor desejado para a base
+let altura = 10; // Substitua pelo valor desejado para a altura
+
+const area = base * altura;
+
+console.log(area)
