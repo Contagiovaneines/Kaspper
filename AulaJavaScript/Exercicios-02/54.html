@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Valores Inteiros</title>
+</head>
+<body>
+    <h1>Imprimir Valores Inteiros</h1>
+    <button onclick="imprimirValores()">Imprimir Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+        /*
+54) Modifique o exercício anterior para aceitar somente valores maiores que 0 para N. Caso o valor informado (para N) não seja maior que 0, deverá ser lido um novo valor para N.
+*/
+        function imprimirValores() {
+            let N;
+            
+            // Solicitar o valor de N até que seja maior que 0
+            do {
+                N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+                
+                if (isNaN(N) || N <= 0) {
+                    alert("Valor inválido. Digite um número maior que zero.");
+                }
+            } while (isNaN(N) || N <= 0);
+
+            let resultado = '';
+            for (let i = 1; i <= N; i++) {
+                resultado += i + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

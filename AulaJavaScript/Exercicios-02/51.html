@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números de 10 a 1</title>
+</head>
+<body>
+    <h1>Imprimir Números de 10 a 1</h1>
+    <button onclick="imprimirNumerosDecrescentes()">Imprimir Números</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+51) Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem decrescente.
+*/
+        function imprimirNumerosDecrescentes() {
+            let resultado = '';
+            for (let i = 10; i >= 1; i--) {
+                resultado += i + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

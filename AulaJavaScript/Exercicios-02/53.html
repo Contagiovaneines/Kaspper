@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Valores Inteiros</title>
+</head>
+<body>
+    <h1>Imprimir Valores Inteiros</h1>
+    <button onclick="imprimirValores()">Imprimir Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+53) Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N será sempre maior que ZERO.
+*/
+        function imprimirValores() {
+            let N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+            
+            while (isNaN(N) || N <= 0) {
+                alert("Valor inválido. Digite um número maior que zero.");
+                N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+            }
+
+            let resultado = '';
+            for (let i = 1; i <= N; i++) {
+                resultado += i + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

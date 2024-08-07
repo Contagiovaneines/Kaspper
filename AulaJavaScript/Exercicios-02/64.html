@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar Números Inferiores a 40</title>
+</head>
+<body>
+    <h1>Somar Números Inferiores a 40</h1>
+    <button onclick="somarInferiores()">Calcular Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    64) Escreva um algoritmo para ler 10 números. Todos os números lidos com valor inferior a 40 devem ser somados. Escreva o valor final da soma efetuada.
+    */
+
+        function somarInferiores() {
+            let soma = 0;
+            let totalNumeros = 10;
+
+            for (let i = 0; i < totalNumeros; i++) {
+                let numero = parseFloat(prompt(`Digite o número ${i + 1}:`));
+                
+                if (isNaN(numero)) {
+                    alert("Por favor, insira um número válido.");
+                    i--; // Decrementar i para repetir a leitura do número
+                } else if (numero < 40) {
+                    soma += numero;
+                }
+            }
+
+            document.getElementById('resultado').innerText = `A soma dos números inferiores a 40 é: ${soma.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

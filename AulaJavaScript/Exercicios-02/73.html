@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Habitantes</title>
+</head>
+<body>
+    <h1>Pesquisa de Habitantes</h1>
+    <button onclick="coletarDados()">Coletar Dados</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    73) A prefeitura de uma cidade deseja fazer uma pesquisa entre seus habitantes. Faça um algoritmo para coletar dados sobre o salário e número de filhos de cada habitante e, após as leituras, escrever:
+        a) Média de salário da população
+        b) Média do número de filhos
+        c) Maior salário dos habitantes
+        d) Percentual de pessoas com salário menor que R$ 150,00
+        Obs.: O final da leitura dos dados se dará com a entrada de um “salário negativo”.
+    */
+
+        function coletarDados() {
+            let totalSalarios = 0;
+            let totalFilhos = 0;
+            let maiorSalario = -Infinity; // Inicializa com o menor valor possível
+            let contagemMenor150 = 0; // Contador para salários menores que R$ 150,00
+            let contagemHabitantes = 0; // Contador para total de habitantes
+
+            while (true) {
+                let salario = parseFloat(prompt("Digite o salário do habitante (ou um valor negativo para encerrar):"));
+
+                if (salario < 0) {
+                    break; // Encerra a coleta de dados
+                }
+
+                let filhos = parseInt(prompt("Digite o número de filhos do habitante:"), 10);
+
+                // Verifica se o número de filhos é um valor válido
+                if (isNaN(filhos) || filhos < 0) {
+                    alert("Por favor, insira um número válido de filhos.");
+                    continue;
+                }
+
+                // Atualiza variáveis
+                totalSalarios += salario;
+                totalFilhos += filhos;
+                contagemHabitantes++;
+
+                if (salario > maiorSalario) {
+                    maiorSalario = salario;
+                }
+
+                if (salario < 150) {
+                    contagemMenor150++;
+                }
+            }
+
+            if (contagemHabitantes === 0) {
+                document.getElementById('resultado').innerText = "Nenhum dado foi coletado.";
+                return;
+            }
+
+            let mediaSalario = totalSalarios / contagemHabitantes;
+            let mediaFilhos = totalFilhos / contagemHabitantes;
+            let percentualMenor150 = (contagemMenor150 / contagemHabitantes) * 100;
+
+            document.getElementById('resultado').innerText = `
+                Média de salário: R$ ${mediaSalario.toFixed(2)}
+                Média do número de filhos: ${mediaFilhos.toFixed(2)}
+                Maior salário: R$ ${maiorSalario.toFixed(2)}
+                Percentual de pessoas com salário menor que R$ 150,00: ${percentualMenor150.toFixed(2)}%
+            `;
+        }
+    </script>
+</body>
+</html>

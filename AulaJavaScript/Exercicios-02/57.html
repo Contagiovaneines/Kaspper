@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Valores Inteiros com REPITA</title>
+</head>
+<body>
+    <h1>Imprimir Valores Inteiros</h1>
+    <button onclick="imprimirValores()">Mostrar Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+57) Reescreva o exercício 53 utilizando a estrutura REPITA e um CONTADOR.
+*/
+        function imprimirValores() {
+            let N;
+            
+            // Solicitar o valor de N até que seja maior que 0
+            do {
+                N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+                
+                if (isNaN(N) || N <= 0) {
+                    alert("Valor inválido. Digite um número maior que zero.");
+                }
+            } while (isNaN(N) || N <= 0);
+
+            let contador = 1;
+            let resultado = '';
+            
+            // Usar REPITA para imprimir os valores de 1 até N
+            do {
+                resultado += contador + '<br>';
+                contador++;
+            } while (contador <= N);
+            
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Inteiros Entre Dois Valores</title>
+</head>
+<body>
+    <h1>Soma dos Inteiros Entre Dois Valores</h1>
+    <button onclick="calcularSomaEntreValores()">Calcular Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    66) O mesmo exercício anterior, mas agora, considere que o segundo valor lido poderá ser maior ou menor que o primeiro valor lido, ou seja, deve-se testá-los.
+    */
+
+        function calcularSomaEntreValores() {
+            let valor1 = parseInt(prompt("Digite o primeiro valor:"));
+            let valor2 = parseInt(prompt("Digite o segundo valor:"));
+
+            // Verifica se ambos os valores são números válidos
+            if (isNaN(valor1) || isNaN(valor2)) {
+                alert("Ambos os valores devem ser números válidos.");
+                return; // Encerra a função se a condição não for atendida
+            }
+
+            // Ordena os valores para garantir que valor1 seja o menor e valor2 o maior
+            let menor = Math.min(valor1, valor2);
+            let maior = Math.max(valor1, valor2);
+
+            let soma = 0;
+            for (let i = menor; i <= maior; i++) {
+                soma += i;
+            }
+
+            document.getElementById('resultado').innerText = `A soma dos inteiros entre ${menor} e ${maior} é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

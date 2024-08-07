@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Aposentadoria</title>
+</head>
+
+<body>
+    <h1>Verificação de Aposentadoria</h1>
+    <button onclick="iniciarVerificacao()">Verificar Aposentadoria</button>
+
+    <script>
+        /*
+Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não. Para estar em condições, um dos seguintes requisitos deve ser satisfeito:
+
+1. Ter no mínimo 65 anos de idade.
+2. Ter trabalhado no mínimo 30 anos.
+3. Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+
+Com base nas informações acima, faça um algoritmo que leia:
+- O número do empregado (código),
+- O ano de seu nascimento,
+- O ano de seu ingresso na empresa.
+
+O programa deverá escrever a idade e o tempo de trabalho do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.
+*/
+        // Função para calcular a idade
+        function calcularIdade(anoNascimento, anoAtual) {
+            return anoAtual - anoNascimento;
+        }
+
+        // Função para calcular o tempo de trabalho
+        function calcularTempoTrabalho(anoIngresso, anoAtual) {
+            return anoAtual - anoIngresso;
+        }
+
+        // Função principal para verificar aposentadoria
+        function verificarAposentadoria(codigoEmpregado, anoNascimento, anoIngresso) {
+            const anoAtual = new Date().getFullYear();
+            const idade = calcularIdade(anoNascimento, anoAtual);
+            const tempoTrabalho = calcularTempoTrabalho(anoIngresso, anoAtual);
+
+            // Montar a mensagem de resultado
+            let resultado = `Empregado ${codigoEmpregado}:\n`;
+            resultado += `Idade: ${idade} anos\n`;
+            resultado += `Tempo de Trabalho: ${tempoTrabalho} anos\n`;
+
+            // Verificar as condições para aposentadoria
+            if (idade >= 65 || tempoTrabalho >= 30 || (idade >= 60 && tempoTrabalho >= 25)) {
+                resultado += "Requerer aposentadoria";
+            } else {
+                resultado += "Não requerer aposentadoria";
+            }
+
+            // Exibir o resultado
+            alert(resultado);
+        }
+
+        // Função para iniciar a verificação
+        function iniciarVerificacao() {
+            const codigo = prompt("Digite o número do empregado:");
+            const anoNascimento = prompt("Digite o ano de nascimento:");
+            const anoIngresso = prompt("Digite o ano de ingresso na empresa:");
+
+            verificarAposentadoria(codigo, parseInt(anoNascimento), parseInt(anoIngresso));
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Maiores que 100</title>
+</head>
+<body>
+    <h1>Imprimir os 10 Primeiros Números Maiores que 100</h1>
+    <button onclick="imprimirNumeros()">Imprimir Números</button>
+    <p id="resultado"></p>
+
+    <script>
+        /*
+52) Escreva um algoritmo para imprimir os 10 primeiros números inteiros maiores que 100.
+*/
+        function imprimirNumeros() {
+            let resultado = '';
+            for (let i = 101; i <= 110; i++) {
+                resultado += i + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

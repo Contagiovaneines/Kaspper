@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada do 8</title>
+</head>
+<body>
+    <h1>Tabuada do 8</h1>
+    <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+55) Escreva um algoritmo que calcule e imprima a tabuada do 8 (1 a 10).
+*/
+        function mostrarTabuada() {
+            const numero = 8;
+            let resultado = '';
+            
+            for (let i = 1; i <= 10; i++) {
+                resultado += `${numero} x ${i} = ${numero * i}<br>`;
+            }
+            
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

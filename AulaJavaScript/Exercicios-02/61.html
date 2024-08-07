@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Média Aritmética</title>
+</head>
+<body>
+    <h1>Calcular Média Aritmética</h1>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    61) Ler 10 valores, calcular e escrever a média aritmética desses valores lidos.
+    */
+
+        function calcularMedia() {
+            let soma = 0;
+            let totalValores = 10;
+
+            for (let i = 0; i < totalValores; i++) {
+                let valor = parseFloat(prompt(`Digite o valor ${i + 1}:`));
+
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    i--; // Decrementar i para repetir a leitura do valor
+                } else {
+                    soma += valor;
+                }
+            }
+
+            let media = soma / totalValores;
+            document.getElementById('resultado').innerText = `A média aritmética dos valores é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Total e Média das Mercadorias</title>
+</head>
+<body>
+    <h1>Valor Total e Média das Mercadorias em Estoque</h1>
+    <button onclick="calcularValores()">Calcular Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    68) Uma loja está levantando o valor total de todas as mercadorias em estoque. Escreva um algoritmo que permita a entrada das seguintes informações:
+        a) o número total de mercadorias no estoque;
+        b) o valor de cada mercadoria.
+        Ao final, imprimir o valor total em estoque e a média de valor das mercadorias.
+    */
+
+        function calcularValores() {
+            let totalMercadorias = parseInt(prompt("Digite o número total de mercadorias no estoque:"));
+            
+            // Verifica se o número de mercadorias é um número válido
+            if (isNaN(totalMercadorias) || totalMercadorias <= 0) {
+                alert("Por favor, insira um número válido de mercadorias.");
+                return;
+            }
+
+            let somaValores = 0;
+
+            for (let i = 0; i < totalMercadorias; i++) {
+                let valorMercadoria = parseFloat(prompt(`Digite o valor da mercadoria ${i + 1}:`));
+
+                // Verifica se o valor da mercadoria é um número válido
+                if (isNaN(valorMercadoria) || valorMercadoria < 0) {
+                    alert("Por favor, insira um valor válido para a mercadoria.");
+                    i--; // Decrementar i para repetir a leitura do valor
+                } else {
+                    somaValores += valorMercadoria;
+                }
+            }
+
+            const mediaValores = somaValores / totalMercadorias;
+            document.getElementById('resultado').innerText = `Valor total em estoque: R$ ${somaValores.toFixed(2)}\nMédia de valor das mercadorias: R$ ${mediaValores.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

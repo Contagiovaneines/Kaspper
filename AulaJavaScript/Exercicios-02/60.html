@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Valores em Intervalo</title>
+</head>
+<body>
+    <h1>Contar Valores em Intervalo</h1>
+    <button onclick="contarValores()">Contar Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    60) Ler 10 valores e escrever quantos desses valores lidos estão no intervalo [10,20] (incluindo os valores 10 e 20 no intervalo) e quantos deles estão fora deste intervalo.
+    */
+
+        function contarValores() {
+            let dentroIntervalo = 0;
+            let foraIntervalo = 0;
+            let totalValores = 10;
+
+            for (let i = 0; i < totalValores; i++) {
+                let valor = parseFloat(prompt(`Digite o valor ${i + 1}:`));
+
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    i--; // Decrementar i para repetir a leitura do valor
+                } else if (valor >= 10 && valor <= 20) {
+                    dentroIntervalo++;
+                } else {
+                    foraIntervalo++;
+                }
+            }
+
+            document.getElementById('resultado').innerText = `Valores no intervalo [10, 20]: ${dentroIntervalo}\nValores fora do intervalo: ${foraIntervalo}`;
+        }
+    </script>
+</body>
+</html>

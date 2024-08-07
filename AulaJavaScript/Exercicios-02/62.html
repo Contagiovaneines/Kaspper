@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Média dos Alunos</title>
+</head>
+<body>
+    <h1>Calcular Média dos Alunos</h1>
+    <button onclick="calcularMediaAlunos()">Calcular Média</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    62) Ler o número de alunos existentes em uma turma e, após isto, ler as notas destes alunos, calcular e escrever a média aritmética dessas notas lidas.
+    */
+
+        function calcularMediaAlunos() {
+            let somaNotas = 0;
+            let numAlunos = parseInt(prompt("Digite o número de alunos na turma:"));
+
+            // Verificar se o número de alunos é válido
+            while (isNaN(numAlunos) || numAlunos <= 0) {
+                alert("Por favor, insira um número válido de alunos.");
+                numAlunos = parseInt(prompt("Digite o número de alunos na turma:"));
+            }
+
+            // Ler as notas dos alunos
+            for (let i = 0; i < numAlunos; i++) {
+                let nota = parseFloat(prompt(`Digite a nota do aluno ${i + 1}:`));
+
+                // Verificar se a nota é válida
+                while (isNaN(nota) || nota < 0 || nota > 10) {
+                    alert("Por favor, insira uma nota válida (de 0 a 10).");
+                    nota = parseFloat(prompt(`Digite a nota do aluno ${i + 1}:`));
+                }
+
+                somaNotas += nota;
+            }
+
+            let media = somaNotas / numAlunos;
+            document.getElementById('resultado').innerText = `A média aritmética das notas é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

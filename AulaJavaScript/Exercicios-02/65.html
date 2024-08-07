@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Inteiros Entre Dois Valores</title>
+</head>
+<body>
+    <h1>Soma dos Inteiros Entre Dois Valores</h1>
+    <button onclick="calcularSomaEntreValores()">Calcular Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    65) Ler 2 valores, calcular e escrever a soma dos inteiros existentes entre os 2 valores lidos (incluindo os valores lidos na soma). Considere que o segundo valor lido será sempre maior que o primeiro valor lido.
+    */
+
+        function calcularSomaEntreValores() {
+            let valor1 = parseInt(prompt("Digite o primeiro valor (menor):"));
+            let valor2 = parseInt(prompt("Digite o segundo valor (maior):"));
+
+            // Verifica se o segundo valor é realmente maior que o primeiro
+            if (isNaN(valor1) || isNaN(valor2) || valor1 >= valor2) {
+                alert("O segundo valor deve ser maior que o primeiro e ambos devem ser números válidos.");
+                return; // Encerra a função se a condição não for atendida
+            }
+
+            let soma = 0;
+            for (let i = valor1; i <= valor2; i++) {
+                soma += i;
+            }
+
+            document.getElementById('resultado').innerText = `A soma dos inteiros entre ${valor1} e ${valor2} é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

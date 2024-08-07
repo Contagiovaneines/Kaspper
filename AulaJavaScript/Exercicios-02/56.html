@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada de um Valor</title>
+</head>
+<body>
+    <h1>Tabuada de um Valor</h1>
+    <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+56) Ler um valor inteiro (aceitar somente valores entre 1 e 10) e escrever a tabuada de 1 a 10 do valor lido.
+*/
+        function mostrarTabuada() {
+            let valor = parseInt(prompt("Digite um valor inteiro entre 1 e 10:"));
+            
+            // Validar o valor para garantir que esteja entre 1 e 10
+            while (isNaN(valor) || valor < 1 || valor > 10) {
+                alert("Valor inválido. Digite um número entre 1 e 10.");
+                valor = parseInt(prompt("Digite um valor inteiro entre 1 e 10:"));
+            }
+
+            let resultado = '';
+            for (let i = 1; i <= 10; i++) {
+                resultado += `${valor} x ${i} = ${valor * i}<br>`;
+            }
+            
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

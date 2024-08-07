@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisão de Valores</title>
+</head>
+
+<body>
+    <h1>Divisão de Valores</h1>
+    <button onclick="dividirValores()">Calcular Divisão</button>
+
+    <script>
+        /*
+    45) Reescreva o exercício anterior utilizando a estrutura ENQUANTO.
+    
+    Algoritmo:
+    - Leia o primeiro valor (valor1).
+    - Leia o segundo valor (valor2).
+    - Enquanto valor2 for zero:
+    - Exiba a mensagem 'VALOR INVÁLIDO' e solicite um novo valor para valor2.
+    - Imprima o resultado da divisão de valor1 por valor2.
+    */
+        function dividirValores() {
+            const valor1 = parseFloat(prompt("Digite o primeiro valor:"));
+            let valor2 = parseFloat(prompt("Digite o segundo valor (não pode ser zero):"));
+
+            // Repetir enquanto valor2 for zero
+            while (valor2 === 0) {
+                alert("VALOR INVÁLIDO. Por favor, insira um valor diferente de zero.");
+                valor2 = parseFloat(prompt("Digite o segundo valor novamente (não pode ser zero):"));
+            }
+
+            const resultado = valor1 / valor2;
+            alert(`Resultado da divisão de ${valor1} por ${valor2}: ${resultado}`);
+        }
+    </script>
+</body>
+
+</html>

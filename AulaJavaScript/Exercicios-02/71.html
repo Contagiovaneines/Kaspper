@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Média dos Números</title>
+</head>
+<body>
+    <h1>Maior e Média dos Números</h1>
+    <button onclick="calcularMaiorEMedia()">Calcular Maior e Média</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    71) Faça um algoritmo para ler uma quantidade e a seguir ler esta quantidade de números. Depois de ler todos os números, o algoritmo deve apresentar na tela o maior dos números lidos e a média dos números lidos.
+    */
+
+        function calcularMaiorEMedia() {
+            let quantidade = parseInt(prompt("Digite a quantidade de números a serem lidos:"));
+
+            // Verifica se a quantidade é um número válido e maior que zero
+            if (isNaN(quantidade) || quantidade <= 0) {
+                alert("Por favor, insira uma quantidade válida maior que zero.");
+                return;
+            }
+
+            let maiorValor = -Infinity; // Inicializa com o menor valor possível
+            let somaValores = 0; // Para somar os valores lidos
+            let contador = 0; // Para contar os valores lidos
+
+            while (contador < quantidade) {
+                let valor = parseFloat(prompt(`Digite o valor ${contador + 1}:`));
+
+                // Verifica se o valor informado é um número válido
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    continue; // Continua com a próxima iteração
+                }
+
+                // Atualiza maior valor e soma
+                if (valor > maiorValor) {
+                    maiorValor = valor;
+                }
+                somaValores += valor;
+                contador++;
+            }
+
+            // Calcula a média
+            let media = somaValores / quantidade;
+
+            document.getElementById('resultado').innerText = `Maior valor: ${maiorValor}\nMédia dos valores: ${media}`;
+        }
+    </script>
+</body>
+</html>

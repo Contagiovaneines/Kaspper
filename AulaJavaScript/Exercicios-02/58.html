@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Valores Inteiros com ENQUANTO</title>
+</head>
+<body>
+    <h1>Imprimir Valores Inteiros</h1>
+    <button onclick="imprimirValores()">Mostrar Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+58) Reescreva o exercício 54 utilizando a estrutura ENQUANTO e um CONTADOR.
+*/
+        function imprimirValores() {
+            let N;
+            
+            // Solicitar o valor de N até que seja maior que 0
+            N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+            
+            while (isNaN(N) || N <= 0) {
+                alert("Valor inválido. Digite um número maior que zero.");
+                N = parseInt(prompt("Digite um valor para N (maior que zero):"));
+            }
+
+            let contador = 1;
+            let resultado = '';
+            
+            // Usar ENQUANTO para imprimir os valores de 1 até N
+            while (contador <= N) {
+                resultado += contador + '<br>';
+                contador++;
+            }
+            
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

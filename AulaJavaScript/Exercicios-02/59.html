@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Valores Negativos</title>
+</head>
+<body>
+    <h1>Contar Valores Negativos</h1>
+    <button onclick="contarNegativos()">Contar Negativos</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    59) Ler 10 valores e escrever quantos desses valores lidos são NEGATIVOS.
+    */
+
+        function contarNegativos() {
+            let contadorNegativos = 0;
+            let totalValores = 10;
+
+            for (let i = 0; i < totalValores; i++) {
+                let valor = parseFloat(prompt(`Digite o valor ${i + 1}:`));
+                
+                if (isNaN(valor)) {
+                    alert("Por favor, insira um número válido.");
+                    i--; // Decrementar i para repetir a leitura do valor
+                } else if (valor < 0) {
+                    contadorNegativos++;
+                }
+            }
+
+            document.getElementById('resultado').innerText = `Número de valores negativos: ${contadorNegativos}`;
+        }
+    </script>
+</body>
+</html>

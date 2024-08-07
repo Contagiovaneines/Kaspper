@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Soma dos Números</title>
+</head>
+<body>
+    <h1>Calcular Soma dos Números</h1>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    63) Escreva um algoritmo para ler 10 números e ao final da leitura escrever a soma total dos 10 números lidos.
+    */
+
+        function calcularSoma() {
+            let soma = 0;
+            let totalNumeros = 10;
+
+            for (let i = 0; i < totalNumeros; i++) {
+                let numero = parseFloat(prompt(`Digite o número ${i + 1}:`));
+                
+                if (isNaN(numero)) {
+                    alert("Por favor, insira um número válido.");
+                    i--; // Decrementar i para repetir a leitura do número
+                } else {
+                    soma += numero;
+                }
+            }
+
+            document.getElementById('resultado').innerText = `A soma total dos números é: ${soma.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

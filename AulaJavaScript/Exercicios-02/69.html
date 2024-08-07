@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Total e Média das Mercadorias</title>
+</head>
+<body>
+    <h1>Valor Total e Média das Mercadorias em Estoque</h1>
+    <button onclick="calcularValores()">Calcular Valores</button>
+    <p id="resultado"></p>
+
+    <script>
+    /*
+    69) O mesmo exercício anterior, mas agora não será informado o número de mercadorias em estoque. Então o funcionamento deverá ser da seguinte forma: ler o valor da mercadoria e perguntar ‘MAIS MERCADORIAS (S/N)?’. Ao final, imprimir o valor total em estoque e a média de valor das mercadorias em estoque.
+    */
+
+        function calcularValores() {
+            let somaValores = 0;
+            let contadorMercadorias = 0;
+            let continuar = 'S';
+
+            while (continuar.toUpperCase() === 'S') {
+                let valorMercadoria = parseFloat(prompt("Digite o valor da mercadoria:"));
+
+                // Verifica se o valor da mercadoria é um número válido
+                if (isNaN(valorMercadoria) || valorMercadoria < 0) {
+                    alert("Por favor, insira um valor válido para a mercadoria.");
+                } else {
+                    somaValores += valorMercadoria;
+                    contadorMercadorias++;
+                }
+
+                continuar = prompt("MAIS MERCADORIAS (S/N)?");
+            }
+
+            // Calcula a média de valores, se houver mercadorias
+            const mediaValores = contadorMercadorias > 0 ? somaValores / contadorMercadorias : 0;
+            document.getElementById('resultado').innerText = `Valor total em estoque: R$ ${somaValores.toFixed(2)}\nMédia de valor das mercadorias: R$ ${mediaValores.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
